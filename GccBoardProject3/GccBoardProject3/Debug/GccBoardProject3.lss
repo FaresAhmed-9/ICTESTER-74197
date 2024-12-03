@@ -1,0 +1,953 @@
+
+GccBoardProject3.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         00000404  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         0000009c  00800060  00000404  00000498  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .bss          00000001  008000fc  008000fc  00000534  2**0
+                  ALLOC
+  3 .comment      00000030  00000000  00000000  00000534  2**0
+                  CONTENTS, READONLY
+  4 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  00000564  2**2
+                  CONTENTS, READONLY
+  5 .debug_aranges 000000c0  00000000  00000000  000005a0  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_info   00000922  00000000  00000000  00000660  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_abbrev 0000025d  00000000  00000000  00000f82  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_line   0000096b  00000000  00000000  000011df  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_frame  000001b0  00000000  00000000  00001b4c  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_str    000062f3  00000000  00000000  00001cfc  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_loc    00000574  00000000  00000000  00007fef  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_ranges 00000148  00000000  00000000  00008563  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 13 .debug_macro  00000371  00000000  00000000  000086ab  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	29 c0       	rjmp	.+82     	; 0x54 <__ctors_end>
+   2:	00 00       	nop
+   4:	42 c0       	rjmp	.+132    	; 0x8a <__bad_interrupt>
+   6:	00 00       	nop
+   8:	40 c0       	rjmp	.+128    	; 0x8a <__bad_interrupt>
+   a:	00 00       	nop
+   c:	3e c0       	rjmp	.+124    	; 0x8a <__bad_interrupt>
+   e:	00 00       	nop
+  10:	3c c0       	rjmp	.+120    	; 0x8a <__bad_interrupt>
+  12:	00 00       	nop
+  14:	3a c0       	rjmp	.+116    	; 0x8a <__bad_interrupt>
+  16:	00 00       	nop
+  18:	38 c0       	rjmp	.+112    	; 0x8a <__bad_interrupt>
+  1a:	00 00       	nop
+  1c:	36 c0       	rjmp	.+108    	; 0x8a <__bad_interrupt>
+  1e:	00 00       	nop
+  20:	34 c0       	rjmp	.+104    	; 0x8a <__bad_interrupt>
+  22:	00 00       	nop
+  24:	32 c0       	rjmp	.+100    	; 0x8a <__bad_interrupt>
+  26:	00 00       	nop
+  28:	30 c0       	rjmp	.+96     	; 0x8a <__bad_interrupt>
+  2a:	00 00       	nop
+  2c:	2e c0       	rjmp	.+92     	; 0x8a <__bad_interrupt>
+  2e:	00 00       	nop
+  30:	2c c0       	rjmp	.+88     	; 0x8a <__bad_interrupt>
+  32:	00 00       	nop
+  34:	2a c0       	rjmp	.+84     	; 0x8a <__bad_interrupt>
+  36:	00 00       	nop
+  38:	28 c0       	rjmp	.+80     	; 0x8a <__bad_interrupt>
+  3a:	00 00       	nop
+  3c:	26 c0       	rjmp	.+76     	; 0x8a <__bad_interrupt>
+  3e:	00 00       	nop
+  40:	24 c0       	rjmp	.+72     	; 0x8a <__bad_interrupt>
+  42:	00 00       	nop
+  44:	22 c0       	rjmp	.+68     	; 0x8a <__bad_interrupt>
+  46:	00 00       	nop
+  48:	20 c0       	rjmp	.+64     	; 0x8a <__bad_interrupt>
+  4a:	00 00       	nop
+  4c:	1e c0       	rjmp	.+60     	; 0x8a <__bad_interrupt>
+  4e:	00 00       	nop
+  50:	1c c0       	rjmp	.+56     	; 0x8a <__bad_interrupt>
+	...
+
+00000054 <__ctors_end>:
+  54:	11 24       	eor	r1, r1
+  56:	1f be       	out	0x3f, r1	; 63
+  58:	cf e5       	ldi	r28, 0x5F	; 95
+  5a:	d8 e0       	ldi	r29, 0x08	; 8
+  5c:	de bf       	out	0x3e, r29	; 62
+  5e:	cd bf       	out	0x3d, r28	; 61
+
+00000060 <__do_copy_data>:
+  60:	10 e0       	ldi	r17, 0x00	; 0
+  62:	a0 e6       	ldi	r26, 0x60	; 96
+  64:	b0 e0       	ldi	r27, 0x00	; 0
+  66:	e4 e0       	ldi	r30, 0x04	; 4
+  68:	f4 e0       	ldi	r31, 0x04	; 4
+  6a:	02 c0       	rjmp	.+4      	; 0x70 <__do_copy_data+0x10>
+  6c:	05 90       	lpm	r0, Z+
+  6e:	0d 92       	st	X+, r0
+  70:	ac 3f       	cpi	r26, 0xFC	; 252
+  72:	b1 07       	cpc	r27, r17
+  74:	d9 f7       	brne	.-10     	; 0x6c <__do_copy_data+0xc>
+
+00000076 <__do_clear_bss>:
+  76:	20 e0       	ldi	r18, 0x00	; 0
+  78:	ac ef       	ldi	r26, 0xFC	; 252
+  7a:	b0 e0       	ldi	r27, 0x00	; 0
+  7c:	01 c0       	rjmp	.+2      	; 0x80 <.do_clear_bss_start>
+
+0000007e <.do_clear_bss_loop>:
+  7e:	1d 92       	st	X+, r1
+
+00000080 <.do_clear_bss_start>:
+  80:	ad 3f       	cpi	r26, 0xFD	; 253
+  82:	b2 07       	cpc	r27, r18
+  84:	e1 f7       	brne	.-8      	; 0x7e <.do_clear_bss_loop>
+  86:	b6 d1       	rcall	.+876    	; 0x3f4 <main>
+  88:	bb c1       	rjmp	.+886    	; 0x400 <_exit>
+
+0000008a <__bad_interrupt>:
+  8a:	ba cf       	rjmp	.-140    	; 0x0 <__vectors>
+
+0000008c <usart_init>:
+	while (!(TWCR & (1<<TWINT)));				//--- Wait until No Acknowledgment Condition is transmitted to Slave
+	while(TW_STATUS != TW_MR_DATA_NACK);		//--- Check for Acknowledgment
+	usart_msg("Receiving MR Data NACK");		//--- Feedback msg to check error
+	usart_tx(0x0D);								//--- Next Line
+	return TWDR;								//--- Return received data
+}
+  8c:	10 bc       	out	0x20, r1	; 32
+  8e:	88 e0       	ldi	r24, 0x08	; 8
+  90:	89 b9       	out	0x09, r24	; 9
+  92:	86 e8       	ldi	r24, 0x86	; 134
+  94:	80 bd       	out	0x20, r24	; 32
+  96:	88 e1       	ldi	r24, 0x18	; 24
+  98:	8a b9       	out	0x0a, r24	; 10
+  9a:	08 95       	ret
+
+0000009c <usart_tx>:
+  9c:	5d 9b       	sbis	0x0b, 5	; 11
+  9e:	fe cf       	rjmp	.-4      	; 0x9c <usart_tx>
+  a0:	8c b9       	out	0x0c, r24	; 12
+  a2:	08 95       	ret
+
+000000a4 <usart_msg>:
+  a4:	cf 93       	push	r28
+  a6:	df 93       	push	r29
+  a8:	ec 01       	movw	r28, r24
+  aa:	88 81       	ld	r24, Y
+  ac:	88 23       	and	r24, r24
+  ae:	29 f0       	breq	.+10     	; 0xba <usart_msg+0x16>
+  b0:	21 96       	adiw	r28, 0x01	; 1
+  b2:	f4 df       	rcall	.-24     	; 0x9c <usart_tx>
+  b4:	89 91       	ld	r24, Y+
+  b6:	81 11       	cpse	r24, r1
+  b8:	fc cf       	rjmp	.-8      	; 0xb2 <usart_msg+0xe>
+  ba:	df 91       	pop	r29
+  bc:	cf 91       	pop	r28
+  be:	08 95       	ret
+
+000000c0 <twi_init>:
+  c0:	83 e0       	ldi	r24, 0x03	; 3
+  c2:	84 bb       	out	0x14, r24	; 20
+  c4:	85 bb       	out	0x15, r24	; 21
+  c6:	e2 df       	rcall	.-60     	; 0x8c <usart_init>
+  c8:	80 e6       	ldi	r24, 0x60	; 96
+  ca:	90 e0       	ldi	r25, 0x00	; 0
+  cc:	eb df       	rcall	.-42     	; 0xa4 <usart_msg>
+  ce:	8d e0       	ldi	r24, 0x0D	; 13
+  d0:	e5 df       	rcall	.-54     	; 0x9c <usart_tx>
+  d2:	86 b7       	in	r24, 0x36	; 54
+  d4:	8b 7f       	andi	r24, 0xFB	; 251
+  d6:	86 bf       	out	0x36, r24	; 54
+  d8:	11 b8       	out	0x01, r1	; 1
+  da:	8c e0       	ldi	r24, 0x0C	; 12
+  dc:	80 b9       	out	0x00, r24	; 0
+  de:	84 e0       	ldi	r24, 0x04	; 4
+  e0:	86 bf       	out	0x36, r24	; 54
+  e2:	85 e3       	ldi	r24, 0x35	; 53
+  e4:	8a 95       	dec	r24
+  e6:	f1 f7       	brne	.-4      	; 0xe4 <twi_init+0x24>
+  e8:	00 00       	nop
+  ea:	08 95       	ret
+
+000000ec <twi_start>:
+  ec:	84 ea       	ldi	r24, 0xA4	; 164
+  ee:	86 bf       	out	0x36, r24	; 54
+  f0:	06 b6       	in	r0, 0x36	; 54
+  f2:	07 fe       	sbrs	r0, 7
+  f4:	fd cf       	rjmp	.-6      	; 0xf0 <twi_start+0x4>
+  f6:	81 b1       	in	r24, 0x01	; 1
+  f8:	88 7f       	andi	r24, 0xF8	; 248
+  fa:	88 30       	cpi	r24, 0x08	; 8
+  fc:	e1 f7       	brne	.-8      	; 0xf6 <twi_start+0xa>
+  fe:	8c ea       	ldi	r24, 0xAC	; 172
+ 100:	90 e0       	ldi	r25, 0x00	; 0
+ 102:	d0 df       	rcall	.-96     	; 0xa4 <usart_msg>
+ 104:	8d e0       	ldi	r24, 0x0D	; 13
+ 106:	ca cf       	rjmp	.-108    	; 0x9c <usart_tx>
+ 108:	08 95       	ret
+
+0000010a <twi_write_cmd>:
+ 10a:	83 b9       	out	0x03, r24	; 3
+ 10c:	84 e8       	ldi	r24, 0x84	; 132
+ 10e:	86 bf       	out	0x36, r24	; 54
+ 110:	06 b6       	in	r0, 0x36	; 54
+ 112:	07 fe       	sbrs	r0, 7
+ 114:	fd cf       	rjmp	.-6      	; 0x110 <twi_write_cmd+0x6>
+ 116:	81 b1       	in	r24, 0x01	; 1
+ 118:	88 7f       	andi	r24, 0xF8	; 248
+ 11a:	88 31       	cpi	r24, 0x18	; 24
+ 11c:	e1 f7       	brne	.-8      	; 0x116 <twi_write_cmd+0xc>
+ 11e:	82 e7       	ldi	r24, 0x72	; 114
+ 120:	90 e0       	ldi	r25, 0x00	; 0
+ 122:	c0 df       	rcall	.-128    	; 0xa4 <usart_msg>
+ 124:	8d e0       	ldi	r24, 0x0D	; 13
+ 126:	ba cf       	rjmp	.-140    	; 0x9c <usart_tx>
+ 128:	08 95       	ret
+
+0000012a <twi_write_dwr>:
+ 12a:	83 b9       	out	0x03, r24	; 3
+ 12c:	84 e8       	ldi	r24, 0x84	; 132
+ 12e:	86 bf       	out	0x36, r24	; 54
+ 130:	06 b6       	in	r0, 0x36	; 54
+ 132:	07 fe       	sbrs	r0, 7
+ 134:	fd cf       	rjmp	.-6      	; 0x130 <twi_write_dwr+0x6>
+ 136:	81 b1       	in	r24, 0x01	; 1
+ 138:	88 7f       	andi	r24, 0xF8	; 248
+ 13a:	88 32       	cpi	r24, 0x28	; 40
+ 13c:	e1 f7       	brne	.-8      	; 0x136 <twi_write_dwr+0xc>
+ 13e:	8a e8       	ldi	r24, 0x8A	; 138
+ 140:	90 e0       	ldi	r25, 0x00	; 0
+ 142:	b0 df       	rcall	.-160    	; 0xa4 <usart_msg>
+ 144:	8d e0       	ldi	r24, 0x0D	; 13
+ 146:	aa cf       	rjmp	.-172    	; 0x9c <usart_tx>
+ 148:	08 95       	ret
+
+0000014a <PCF8574_write>:
+unsigned char lcd = 0x00;						//--- Declaring a variable as lcd for data operation
+
+/* Function to Write data in PCF8574 */
+
+void PCF8574_write(unsigned char x)
+{
+ 14a:	cf 93       	push	r28
+ 14c:	c8 2f       	mov	r28, r24
+		twi_start();							//--- Start Condition 
+ 14e:	ce df       	rcall	.-100    	; 0xec <twi_start>
+		twi_write_cmd((PCF8574 << 1)| WRITE);	//--- SLA+W is Send 0x40 
+ 150:	80 e4       	ldi	r24, 0x40	; 64
+ 152:	db df       	rcall	.-74     	; 0x10a <twi_write_cmd>
+		twi_write_dwr(x);						//--- Data to Slave Device
+ 154:	8c 2f       	mov	r24, r28
+ 156:	e9 df       	rcall	.-46     	; 0x12a <twi_write_dwr>
+
+/* Function to Send Stop Condition */
+
+void twi_stop()
+{
+	TWCR = (1<<TWINT)|(1<<TWEN)|(1<<TWSTO);		//--- Stop Condition as per Datasheet
+ 158:	84 e9       	ldi	r24, 0x94	; 148
+ 15a:	86 bf       	out	0x36, r24	; 54
+		twi_stop();								//--- Stop Condition 
+}
+ 15c:	cf 91       	pop	r28
+ 15e:	08 95       	ret
+
+00000160 <twi_lcd_4bit_send>:
+
+/* Function to Write 4-bit data to LCD */
+
+void twi_lcd_4bit_send(unsigned char x)
+{
+ 160:	cf 93       	push	r28
+ 162:	c8 2f       	mov	r28, r24
+	unsigned char temp = 0x00;					//--- temp variable for data operation
+	
+	lcd &= 0x0F;								//--- Masking last four bit to prevent the RS, RW, EN, Backlight
+ 164:	80 91 fc 00 	lds	r24, 0x00FC
+ 168:	8f 70       	andi	r24, 0x0F	; 15
+ 16a:	84 60       	ori	r24, 0x04	; 4
+	temp = (x & 0xF0);							//--- Masking higher 4-Bit of Data and send it LCD
+ 16c:	9c 2f       	mov	r25, r28
+ 16e:	90 7f       	andi	r25, 0xF0	; 240
+	lcd |= temp;								//--- 4-Bit Data and LCD control Pin
+	lcd |= (0x04);								//--- Latching Data to LCD EN = 1
+ 170:	89 2b       	or	r24, r25
+ 172:	80 93 fc 00 	sts	0x00FC, r24
+	PCF8574_write(lcd);							//--- Send Data From PCF8574 to LCD PORT
+ 176:	e9 df       	rcall	.-46     	; 0x14a <PCF8574_write>
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 178:	35 e0       	ldi	r19, 0x05	; 5
+ 17a:	3a 95       	dec	r19
+ 17c:	f1 f7       	brne	.-4      	; 0x17a <twi_lcd_4bit_send+0x1a>
+ 17e:	00 00       	nop
+	_delay_us(1);								//--- 1us Delay
+	lcd &= ~(0x04);								//--- Latching Complete
+ 180:	80 91 fc 00 	lds	r24, 0x00FC
+ 184:	8b 7f       	andi	r24, 0xFB	; 251
+ 186:	80 93 fc 00 	sts	0x00FC, r24
+	PCF8574_write(lcd);							//--- Send Data From PCF8574 to LCD PORT 
+ 18a:	df df       	rcall	.-66     	; 0x14a <PCF8574_write>
+ 18c:	8a e1       	ldi	r24, 0x1A	; 26
+ 18e:	8a 95       	dec	r24
+ 190:	f1 f7       	brne	.-4      	; 0x18e <twi_lcd_4bit_send+0x2e>
+ 192:	00 c0       	rjmp	.+0      	; 0x194 <twi_lcd_4bit_send+0x34>
+	_delay_us(5);								//--- 5us Delay to Complete Latching
+	
+	
+	temp = ((x & 0x0F)<<4);						//--- Masking Lower 4-Bit of Data and send it LCD
+	lcd &= 0x0F;								//--- Masking last four bit to prevent the RS, RW, EN, Backlight					
+ 194:	80 91 fc 00 	lds	r24, 0x00FC
+ 198:	8f 70       	andi	r24, 0x0F	; 15
+ 19a:	28 2f       	mov	r18, r24
+ 19c:	24 60       	ori	r18, 0x04	; 4
+	lcd &= ~(0x04);								//--- Latching Complete
+	PCF8574_write(lcd);							//--- Send Data From PCF8574 to LCD PORT 
+	_delay_us(5);								//--- 5us Delay to Complete Latching
+	
+	
+	temp = ((x & 0x0F)<<4);						//--- Masking Lower 4-Bit of Data and send it LCD
+ 19e:	30 e1       	ldi	r19, 0x10	; 16
+ 1a0:	c3 9f       	mul	r28, r19
+ 1a2:	c0 01       	movw	r24, r0
+ 1a4:	11 24       	eor	r1, r1
+	lcd &= 0x0F;								//--- Masking last four bit to prevent the RS, RW, EN, Backlight					
+	lcd |= temp;								//--- 4-Bit Data and LCD control Pin
+	lcd |= (0x04);								//--- Latching Data to LCD EN = 1
+ 1a6:	82 2b       	or	r24, r18
+ 1a8:	80 93 fc 00 	sts	0x00FC, r24
+	PCF8574_write(lcd);							//--- Send Data From PCF8574 to LCD PORT
+ 1ac:	ce df       	rcall	.-100    	; 0x14a <PCF8574_write>
+ 1ae:	85 e0       	ldi	r24, 0x05	; 5
+ 1b0:	8a 95       	dec	r24
+ 1b2:	f1 f7       	brne	.-4      	; 0x1b0 <twi_lcd_4bit_send+0x50>
+ 1b4:	00 00       	nop
+	_delay_us(1);								//--- 1us Delay
+	lcd &= ~(0x04);								//--- Latching Complete
+ 1b6:	80 91 fc 00 	lds	r24, 0x00FC
+ 1ba:	8b 7f       	andi	r24, 0xFB	; 251
+ 1bc:	80 93 fc 00 	sts	0x00FC, r24
+	PCF8574_write(lcd);							//--- Send Data From PCF8574 to LCD PORT
+ 1c0:	c4 df       	rcall	.-120    	; 0x14a <PCF8574_write>
+ 1c2:	3a e1       	ldi	r19, 0x1A	; 26
+ 1c4:	3a 95       	dec	r19
+ 1c6:	f1 f7       	brne	.-4      	; 0x1c4 <twi_lcd_4bit_send+0x64>
+ 1c8:	00 c0       	rjmp	.+0      	; 0x1ca <twi_lcd_4bit_send+0x6a>
+	_delay_us(5);								//--- 5us Delay to Complete Latching
+	
+}
+ 1ca:	cf 91       	pop	r28
+ 1cc:	08 95       	ret
+
+000001ce <twi_lcd_cmd>:
+
+/* Function to Write to LCD Command Register */
+
+void twi_lcd_cmd(unsigned char x)
+{
+ 1ce:	cf 93       	push	r28
+ 1d0:	c8 2f       	mov	r28, r24
+	lcd = 0x08;									//--- Enable Backlight Pin
+ 1d2:	88 e0       	ldi	r24, 0x08	; 8
+ 1d4:	80 93 fc 00 	sts	0x00FC, r24
+	lcd &= ~(0x01);								//--- Select Command Register By RS = 0
+	PCF8574_write(lcd);							//--- Send Data From PCF8574 to LCD PORT
+ 1d8:	b8 df       	rcall	.-144    	; 0x14a <PCF8574_write>
+	twi_lcd_4bit_send(x);						//--- Function to Write 4-bit data to LCD 
+ 1da:	8c 2f       	mov	r24, r28
+ 1dc:	c1 df       	rcall	.-126    	; 0x160 <twi_lcd_4bit_send>
+	
+}
+ 1de:	cf 91       	pop	r28
+ 1e0:	08 95       	ret
+
+000001e2 <twi_lcd_dwr>:
+
+/* Function to Write to LCD Command Register */
+
+void twi_lcd_dwr(unsigned char x)
+{
+ 1e2:	cf 93       	push	r28
+ 1e4:	c8 2f       	mov	r28, r24
+	lcd |= 0x09;								//--- Enable Backlight Pin & Select Data Register By RS = 1
+ 1e6:	90 91 fc 00 	lds	r25, 0x00FC
+ 1ea:	89 2f       	mov	r24, r25
+ 1ec:	89 60       	ori	r24, 0x09	; 9
+ 1ee:	80 93 fc 00 	sts	0x00FC, r24
+	PCF8574_write(lcd);							//--- Send Data From PCF8574 to LCD PORT	
+ 1f2:	ab df       	rcall	.-170    	; 0x14a <PCF8574_write>
+	twi_lcd_4bit_send(x);						//--- Function to Write 4-bit data to LCD
+ 1f4:	8c 2f       	mov	r24, r28
+ 1f6:	b4 df       	rcall	.-152    	; 0x160 <twi_lcd_4bit_send>
+}
+ 1f8:	cf 91       	pop	r28
+ 1fa:	08 95       	ret
+
+000001fc <twi_lcd_msg>:
+
+/* Function to Send String of Data */
+
+void twi_lcd_msg(char *c)
+{
+ 1fc:	cf 93       	push	r28
+ 1fe:	df 93       	push	r29
+ 200:	ec 01       	movw	r28, r24
+	while (*c != '\0')							//--- Check Pointer for Null
+ 202:	88 81       	ld	r24, Y
+ 204:	88 23       	and	r24, r24
+ 206:	29 f0       	breq	.+10     	; 0x212 <twi_lcd_msg+0x16>
+ 208:	21 96       	adiw	r28, 0x01	; 1
+	twi_lcd_dwr(*c++);							//--- Send the String of Data
+ 20a:	eb df       	rcall	.-42     	; 0x1e2 <twi_lcd_dwr>
+
+/* Function to Send String of Data */
+
+void twi_lcd_msg(char *c)
+{
+	while (*c != '\0')							//--- Check Pointer for Null
+ 20c:	89 91       	ld	r24, Y+
+ 20e:	81 11       	cpse	r24, r1
+ 210:	fc cf       	rjmp	.-8      	; 0x20a <twi_lcd_msg+0xe>
+	twi_lcd_dwr(*c++);							//--- Send the String of Data
+}
+ 212:	df 91       	pop	r29
+ 214:	cf 91       	pop	r28
+ 216:	08 95       	ret
+
+00000218 <twi_lcd_clear>:
+
+/* Function to Execute Clear LCD Command */
+
+void twi_lcd_clear()
+{
+	twi_lcd_cmd(0x01);
+ 218:	81 e0       	ldi	r24, 0x01	; 1
+ 21a:	d9 cf       	rjmp	.-78     	; 0x1ce <twi_lcd_cmd>
+ 21c:	08 95       	ret
+
+0000021e <twi_lcd_init>:
+
+/* Function to Initialize LCD in 4-Bit Mode, Cursor Setting and Row Selection */
+
+void twi_lcd_init()
+{	
+	lcd = 0x04;						//--- EN = 1 for 25us initialize Sequence
+ 21e:	84 e0       	ldi	r24, 0x04	; 4
+ 220:	80 93 fc 00 	sts	0x00FC, r24
+	PCF8574_write(lcd);
+ 224:	92 df       	rcall	.-220    	; 0x14a <PCF8574_write>
+ 226:	25 e8       	ldi	r18, 0x85	; 133
+ 228:	2a 95       	dec	r18
+ 22a:	f1 f7       	brne	.-4      	; 0x228 <twi_lcd_init+0xa>
+ 22c:	00 00       	nop
+	_delay_us(25);
+	
+	twi_lcd_cmd(0x03);				//--- Initialize Sequence
+ 22e:	83 e0       	ldi	r24, 0x03	; 3
+ 230:	ce df       	rcall	.-100    	; 0x1ce <twi_lcd_cmd>
+	twi_lcd_cmd(0x03);				//--- Initialize Sequence
+ 232:	83 e0       	ldi	r24, 0x03	; 3
+ 234:	cc df       	rcall	.-104    	; 0x1ce <twi_lcd_cmd>
+	twi_lcd_cmd(0x03);				//--- Initialize Sequence
+ 236:	83 e0       	ldi	r24, 0x03	; 3
+ 238:	ca df       	rcall	.-108    	; 0x1ce <twi_lcd_cmd>
+	twi_lcd_cmd(0x02);				//--- Return to Home
+ 23a:	82 e0       	ldi	r24, 0x02	; 2
+ 23c:	c8 df       	rcall	.-112    	; 0x1ce <twi_lcd_cmd>
+	twi_lcd_cmd(0x28);				//--- 4-Bit Mode 2 - Row Select
+ 23e:	88 e2       	ldi	r24, 0x28	; 40
+ 240:	c6 df       	rcall	.-116    	; 0x1ce <twi_lcd_cmd>
+	twi_lcd_cmd(0x0F);				//--- Cursor on, Blinking on
+ 242:	8f e0       	ldi	r24, 0x0F	; 15
+ 244:	c4 df       	rcall	.-120    	; 0x1ce <twi_lcd_cmd>
+	twi_lcd_cmd(0x01);				//--- Clear LCD
+ 246:	81 e0       	ldi	r24, 0x01	; 1
+ 248:	c2 df       	rcall	.-124    	; 0x1ce <twi_lcd_cmd>
+	twi_lcd_cmd(0x06);				//--- Auto increment Cursor
+ 24a:	86 e0       	ldi	r24, 0x06	; 6
+ 24c:	c0 df       	rcall	.-128    	; 0x1ce <twi_lcd_cmd>
+	twi_lcd_cmd(0x80);				//--- Row 1 Column 1 Address
+ 24e:	80 e8       	ldi	r24, 0x80	; 128
+ 250:	be df       	rcall	.-132    	; 0x1ce <twi_lcd_cmd>
+	twi_lcd_msg("CODE-N-LOGIC");	//--- String Send to LCD
+ 252:	85 ee       	ldi	r24, 0xE5	; 229
+ 254:	90 e0       	ldi	r25, 0x00	; 0
+ 256:	d2 df       	rcall	.-92     	; 0x1fc <twi_lcd_msg>
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 258:	8f ef       	ldi	r24, 0xFF	; 255
+ 25a:	93 ed       	ldi	r25, 0xD3	; 211
+ 25c:	20 e3       	ldi	r18, 0x30	; 48
+ 25e:	81 50       	subi	r24, 0x01	; 1
+ 260:	90 40       	sbci	r25, 0x00	; 0
+ 262:	20 40       	sbci	r18, 0x00	; 0
+ 264:	e1 f7       	brne	.-8      	; 0x25e <twi_lcd_init+0x40>
+ 266:	00 c0       	rjmp	.+0      	; 0x268 <twi_lcd_init+0x4a>
+ 268:	00 00       	nop
+	_delay_ms(1000);				//--- 1s Delay
+	twi_lcd_clear();				//--- Clear LCD
+ 26a:	d6 df       	rcall	.-84     	; 0x218 <twi_lcd_clear>
+	twi_lcd_cmd(0x80);				//--- Row 1 Column 1 Address
+ 26c:	80 e8       	ldi	r24, 0x80	; 128
+ 26e:	af cf       	rjmp	.-162    	; 0x1ce <twi_lcd_cmd>
+ 270:	08 95       	ret
+
+00000272 <IC_74197>:
+if (value)                     \
+        SET_PIN(port, pin);        \
+    else                           \
+        CLEAR_PIN(port, pin);
+
+int IC_74197(void) {
+ 272:	0f 93       	push	r16
+ 274:	1f 93       	push	r17
+ 276:	cf 93       	push	r28
+ 278:	df 93       	push	r29
+	// Configure DDR for inputs and outputs
+	DDRA = 0x6D;  // PA0, PA2, PA3, PA5 as output; PA1, PA4 as input
+ 27a:	8d e6       	ldi	r24, 0x6D	; 109
+ 27c:	8a bb       	out	0x1a, r24	; 26
+	DDRB = 0x5B;  // PB0, PB1, PB3, PB4, PB6 as output; PB2, PB5 as input
+ 27e:	8b e5       	ldi	r24, 0x5B	; 91
+ 280:	87 bb       	out	0x17, r24	; 23
+
+	// Initialize control pins
+	CLEAR_PIN(PORTA, 5);  // Clock2 (PA5, PIN6)
+ 282:	dd 98       	cbi	0x1b, 5	; 27
+	CLEAR_PIN(PORTB, 6);  // Clock1 (PB6, PIN8)
+ 284:	c6 98       	cbi	0x18, 6	; 24
+	SET_PIN(PORTA, 0);    // Load (PA0, PIN1)
+ 286:	d8 9a       	sbi	0x1b, 0	; 27
+	SET_PIN(PORTB, 1);    // Clear (PB1, PIN13)
+ 288:	c1 9a       	sbi	0x18, 1	; 24
+
+	// Reset using Clear
+	CLEAR_PIN(PORTB, 1);  // Clear LOW
+ 28a:	c1 98       	cbi	0x18, 1	; 24
+	SET_PIN(PORTB, 1);    // Clear HIGH
+ 28c:	c1 9a       	sbi	0x18, 1	; 24
+
+	// Test PIN5 (PA4, PIN5) for two clock cycles
+	for (uint8_t i = 0; i < 2; i++) {
+		if (((PINA >> 4) & 1) != i) { // Check if bit 4 of PINA is equal to i
+ 28e:	cc 9b       	sbis	0x19, 4	; 25
+ 290:	a7 c0       	rjmp	.+334    	; 0x3e0 <IC_74197+0x16e>
+ 292:	8d c0       	rjmp	.+282    	; 0x3ae <IC_74197+0x13c>
+			
+			return 1;
+		}
+		SET_PIN(PORTB, 6);  // Clock1 (PB6, PIN8) HIGH
+ 294:	c6 9a       	sbi	0x18, 6	; 24
+		CLEAR_PIN(PORTB, 6); // Clock1 (PB6, PIN8) LOW
+ 296:	c6 98       	cbi	0x18, 6	; 24
+	}
+
+	// Reset using Clear again
+	CLEAR_PIN(PORTB, 1);  // Clear LOW
+ 298:	c1 98       	cbi	0x18, 1	; 24
+	SET_PIN(PORTB, 1);    // Clear HIGH
+ 29a:	c1 9a       	sbi	0x18, 1	; 24
+
+	// Test outputs on PIN12, PIN2, PIN9 (PB2, PA1, PB5) for 8 clock cycles
+	for (uint8_t i = 0; i < 8; i++) {
+		 // Read and combine the input pins into a 3-bit value
+		 uint8_t bit2 = ((PINB >>2)&1);  // PINB[2]
+ 29c:	26 b3       	in	r18, 0x16	; 22
+		 uint8_t bit1 = ((PINA>> 1)&1);  // PINA[1]
+ 29e:	89 b3       	in	r24, 0x19	; 25
+		 uint8_t bit0 = ((PINB>> 5)&1);  // PINB[5]
+ 2a0:	96 b3       	in	r25, 0x16	; 22
+		 uint8_t value = (bit2 << 2) | (bit1 << 1) | bit0;
+ 2a2:	24 70       	andi	r18, 0x04	; 4
+ 2a4:	82 70       	andi	r24, 0x02	; 2
+ 2a6:	82 2b       	or	r24, r18
+	// Test outputs on PIN12, PIN2, PIN9 (PB2, PA1, PB5) for 8 clock cycles
+	for (uint8_t i = 0; i < 8; i++) {
+		 // Read and combine the input pins into a 3-bit value
+		 uint8_t bit2 = ((PINB >>2)&1);  // PINB[2]
+		 uint8_t bit1 = ((PINA>> 1)&1);  // PINA[1]
+		 uint8_t bit0 = ((PINB>> 5)&1);  // PINB[5]
+ 2a8:	95 fb       	bst	r25, 5
+ 2aa:	99 27       	eor	r25, r25
+ 2ac:	90 f9       	bld	r25, 0
+		 uint8_t value = (bit2 << 2) | (bit1 << 1) | bit0;
+ 2ae:	89 2b       	or	r24, r25
+		if (value != i) {
+ 2b0:	09 f4       	brne	.+2      	; 0x2b4 <IC_74197+0x42>
+ 2b2:	92 c0       	rjmp	.+292    	; 0x3d8 <IC_74197+0x166>
+ 2b4:	7f c0       	rjmp	.+254    	; 0x3b4 <IC_74197+0x142>
+	SET_PIN(PORTB, 1);    // Clear HIGH
+
+	// Test outputs on PIN12, PIN2, PIN9 (PB2, PA1, PB5) for 8 clock cycles
+	for (uint8_t i = 0; i < 8; i++) {
+		 // Read and combine the input pins into a 3-bit value
+		 uint8_t bit2 = ((PINB >>2)&1);  // PINB[2]
+ 2b6:	26 b3       	in	r18, 0x16	; 22
+		 uint8_t bit1 = ((PINA>> 1)&1);  // PINA[1]
+ 2b8:	89 b3       	in	r24, 0x19	; 25
+		 uint8_t bit0 = ((PINB>> 5)&1);  // PINB[5]
+ 2ba:	96 b3       	in	r25, 0x16	; 22
+		 uint8_t value = (bit2 << 2) | (bit1 << 1) | bit0;
+ 2bc:	24 70       	andi	r18, 0x04	; 4
+ 2be:	82 70       	andi	r24, 0x02	; 2
+ 2c0:	82 2b       	or	r24, r18
+	// Test outputs on PIN12, PIN2, PIN9 (PB2, PA1, PB5) for 8 clock cycles
+	for (uint8_t i = 0; i < 8; i++) {
+		 // Read and combine the input pins into a 3-bit value
+		 uint8_t bit2 = ((PINB >>2)&1);  // PINB[2]
+		 uint8_t bit1 = ((PINA>> 1)&1);  // PINA[1]
+		 uint8_t bit0 = ((PINB>> 5)&1);  // PINB[5]
+ 2c2:	95 fb       	bst	r25, 5
+ 2c4:	99 27       	eor	r25, r25
+ 2c6:	90 f9       	bld	r25, 0
+		 uint8_t value = (bit2 << 2) | (bit1 << 1) | bit0;
+ 2c8:	89 2b       	or	r24, r25
+		if (value != i) {
+ 2ca:	83 13       	cpse	r24, r19
+ 2cc:	76 c0       	rjmp	.+236    	; 0x3ba <IC_74197+0x148>
+			return 1;
+		}
+		SET_PIN(PORTA, 5);  // Clock2 (PA5, PIN6) HIGH
+ 2ce:	dd 9a       	sbi	0x1b, 5	; 27
+		CLEAR_PIN(PORTA, 5); // Clock2 (PA5, PIN6) LOW
+ 2d0:	dd 98       	cbi	0x1b, 5	; 27
+	// Reset using Clear again
+	CLEAR_PIN(PORTB, 1);  // Clear LOW
+	SET_PIN(PORTB, 1);    // Clear HIGH
+
+	// Test outputs on PIN12, PIN2, PIN9 (PB2, PA1, PB5) for 8 clock cycles
+	for (uint8_t i = 0; i < 8; i++) {
+ 2d2:	31 e0       	ldi	r19, 0x01	; 1
+ 2d4:	38 0f       	add	r19, r24
+ 2d6:	38 30       	cpi	r19, 0x08	; 8
+ 2d8:	70 f3       	brcs	.-36     	; 0x2b6 <IC_74197+0x44>
+		SET_PIN(PORTA, 5);  // Clock2 (PA5, PIN6) HIGH
+		CLEAR_PIN(PORTA, 5); // Clock2 (PA5, PIN6) LOW
+	}
+
+	// Check all outputs are zero
+	if ((READ_PIN(PINB, 2) | READ_PIN(PINA, 1) | READ_PIN(PINB, 5) | READ_PIN(PINA, 4)) != 0) {
+ 2da:	36 b3       	in	r19, 0x16	; 22
+ 2dc:	89 b3       	in	r24, 0x19	; 25
+ 2de:	26 b3       	in	r18, 0x16	; 22
+ 2e0:	99 b3       	in	r25, 0x19	; 25
+ 2e2:	a8 2f       	mov	r26, r24
+ 2e4:	a2 70       	andi	r26, 0x02	; 2
+ 2e6:	83 2f       	mov	r24, r19
+ 2e8:	84 70       	andi	r24, 0x04	; 4
+ 2ea:	8a 2b       	or	r24, r26
+ 2ec:	20 72       	andi	r18, 0x20	; 32
+ 2ee:	82 2b       	or	r24, r18
+ 2f0:	90 71       	andi	r25, 0x10	; 16
+ 2f2:	89 2b       	or	r24, r25
+ 2f4:	09 f0       	breq	.+2      	; 0x2f8 <IC_74197+0x86>
+ 2f6:	64 c0       	rjmp	.+200    	; 0x3c0 <IC_74197+0x14e>
+ 2f8:	c2 e0       	ldi	r28, 0x02	; 2
+ 2fa:	85 e0       	ldi	r24, 0x05	; 5
+
+		if (value != d) { // Check if the read value matches the expected value
+			return 1;     // Error if mismatch
+		}
+
+		d ^= 0x0F; // Toggle data bits (0b0101 <-> 0b1010)
+ 2fc:	df e0       	ldi	r29, 0x0F	; 15
+
+	// Test data loading functionality
+	uint8_t d = 0b0101; // Initial data
+
+	for (uint8_t i = 0; i < 2; i++) {
+		CLEAR_PIN(PORTA, 0); // Load (PA0, PIN1) LOW
+ 2fe:	d8 98       	cbi	0x1b, 0	; 27
+
+		// Set data on D0, D1, D2, D3 (PA3, PB4, PA2, PB3)
+		WRITE_PIN(PORTB,3,(d&0x08));
+ 300:	83 ff       	sbrs	r24, 3
+ 302:	02 c0       	rjmp	.+4      	; 0x308 <IC_74197+0x96>
+ 304:	c3 9a       	sbi	0x18, 3	; 24
+ 306:	01 c0       	rjmp	.+2      	; 0x30a <IC_74197+0x98>
+ 308:	c3 98       	cbi	0x18, 3	; 24
+		WRITE_PIN(PORTA,2,(d&0x04));
+ 30a:	82 ff       	sbrs	r24, 2
+ 30c:	02 c0       	rjmp	.+4      	; 0x312 <IC_74197+0xa0>
+ 30e:	da 9a       	sbi	0x1b, 2	; 27
+ 310:	01 c0       	rjmp	.+2      	; 0x314 <IC_74197+0xa2>
+ 312:	da 98       	cbi	0x1b, 2	; 27
+		WRITE_PIN(PORTB,4,(d&0x02));
+ 314:	81 ff       	sbrs	r24, 1
+ 316:	02 c0       	rjmp	.+4      	; 0x31c <IC_74197+0xaa>
+ 318:	c4 9a       	sbi	0x18, 4	; 24
+ 31a:	01 c0       	rjmp	.+2      	; 0x31e <IC_74197+0xac>
+ 31c:	c4 98       	cbi	0x18, 4	; 24
+		WRITE_PIN(PORTA,3,(d&0x01));
+ 31e:	80 ff       	sbrs	r24, 0
+ 320:	02 c0       	rjmp	.+4      	; 0x326 <IC_74197+0xb4>
+ 322:	db 9a       	sbi	0x1b, 3	; 27
+ 324:	01 c0       	rjmp	.+2      	; 0x328 <IC_74197+0xb6>
+ 326:	db 98       	cbi	0x1b, 3	; 27
+		SET_PIN(PORTA, 0); // Load (PA0, PIN1) HIGH
+ 328:	d8 9a       	sbi	0x1b, 0	; 27
+
+		// Verify data on Q0, Q1, Q2, Q3 (PA4, PB5, PA1, PB2)
+		uint8_t value = ((PINA >> 4) & 0x01) |       // Q0 -> PA4
+ 32a:	29 b3       	in	r18, 0x19	; 25
+		((PINB >> 5) & 0x01) << 1 | // Q1 -> PB5
+ 32c:	a6 b3       	in	r26, 0x16	; 22
+		((PINA >> 1) & 0x01) << 2 | // Q2 -> PA1
+ 32e:	99 b3       	in	r25, 0x19	; 25
+		((PINB >> 2) & 0x01) << 3;  // Q3 -> PB2
+ 330:	36 b3       	in	r19, 0x16	; 22
+		WRITE_PIN(PORTA,3,(d&0x01));
+		SET_PIN(PORTA, 0); // Load (PA0, PIN1) HIGH
+
+		// Verify data on Q0, Q1, Q2, Q3 (PA4, PB5, PA1, PB2)
+		uint8_t value = ((PINA >> 4) & 0x01) |       // Q0 -> PA4
+		((PINB >> 5) & 0x01) << 1 | // Q1 -> PB5
+ 332:	a5 fb       	bst	r26, 5
+ 334:	44 27       	eor	r20, r20
+ 336:	40 f9       	bld	r20, 0
+ 338:	50 e0       	ldi	r21, 0x00	; 0
+ 33a:	8a 01       	movw	r16, r20
+ 33c:	00 0f       	add	r16, r16
+ 33e:	11 1f       	adc	r17, r17
+		((PINA >> 1) & 0x01) << 2 | // Q2 -> PA1
+ 340:	91 fb       	bst	r25, 1
+ 342:	66 27       	eor	r22, r22
+ 344:	60 f9       	bld	r22, 0
+ 346:	70 e0       	ldi	r23, 0x00	; 0
+ 348:	db 01       	movw	r26, r22
+ 34a:	aa 0f       	add	r26, r26
+ 34c:	bb 1f       	adc	r27, r27
+ 34e:	aa 0f       	add	r26, r26
+ 350:	bb 1f       	adc	r27, r27
+ 352:	90 2f       	mov	r25, r16
+ 354:	9a 2b       	or	r25, r26
+		WRITE_PIN(PORTB,4,(d&0x02));
+		WRITE_PIN(PORTA,3,(d&0x01));
+		SET_PIN(PORTA, 0); // Load (PA0, PIN1) HIGH
+
+		// Verify data on Q0, Q1, Q2, Q3 (PA4, PB5, PA1, PB2)
+		uint8_t value = ((PINA >> 4) & 0x01) |       // Q0 -> PA4
+ 356:	22 95       	swap	r18
+ 358:	21 70       	andi	r18, 0x01	; 1
+ 35a:	92 2b       	or	r25, r18
+		((PINB >> 5) & 0x01) << 1 | // Q1 -> PB5
+		((PINA >> 1) & 0x01) << 2 | // Q2 -> PA1
+		((PINB >> 2) & 0x01) << 3;  // Q3 -> PB2
+ 35c:	32 fb       	bst	r19, 2
+ 35e:	ee 27       	eor	r30, r30
+ 360:	e0 f9       	bld	r30, 0
+ 362:	f0 e0       	ldi	r31, 0x00	; 0
+ 364:	9f 01       	movw	r18, r30
+ 366:	22 0f       	add	r18, r18
+ 368:	33 1f       	adc	r19, r19
+ 36a:	22 0f       	add	r18, r18
+ 36c:	33 1f       	adc	r19, r19
+ 36e:	22 0f       	add	r18, r18
+ 370:	33 1f       	adc	r19, r19
+		WRITE_PIN(PORTB,4,(d&0x02));
+		WRITE_PIN(PORTA,3,(d&0x01));
+		SET_PIN(PORTA, 0); // Load (PA0, PIN1) HIGH
+
+		// Verify data on Q0, Q1, Q2, Q3 (PA4, PB5, PA1, PB2)
+		uint8_t value = ((PINA >> 4) & 0x01) |       // Q0 -> PA4
+ 372:	92 2b       	or	r25, r18
+		((PINB >> 5) & 0x01) << 1 | // Q1 -> PB5
+		((PINA >> 1) & 0x01) << 2 | // Q2 -> PA1
+		((PINB >> 2) & 0x01) << 3;  // Q3 -> PB2
+
+		if (value != d) { // Check if the read value matches the expected value
+ 374:	98 13       	cpse	r25, r24
+ 376:	27 c0       	rjmp	.+78     	; 0x3c6 <IC_74197+0x154>
+			return 1;     // Error if mismatch
+		}
+
+		d ^= 0x0F; // Toggle data bits (0b0101 <-> 0b1010)
+ 378:	89 2f       	mov	r24, r25
+ 37a:	8d 27       	eor	r24, r29
+ 37c:	c1 50       	subi	r28, 0x01	; 1
+	}
+
+	// Test data loading functionality
+	uint8_t d = 0b0101; // Initial data
+
+	for (uint8_t i = 0; i < 2; i++) {
+ 37e:	09 f0       	breq	.+2      	; 0x382 <IC_74197+0x110>
+ 380:	be cf       	rjmp	.-132    	; 0x2fe <IC_74197+0x8c>
+		d ^= 0x0F; // Toggle data bits (0b0101 <-> 0b1010)
+	}
+
+
+	// Final reset
+	CLEAR_PIN(PORTB, 1);  // Clear LOW
+ 382:	c1 98       	cbi	0x18, 1	; 24
+	SET_PIN(PORTB, 1);    // Clear HIGH
+ 384:	c1 9a       	sbi	0x18, 1	; 24
+
+	// Verify final state
+	if ((READ_PIN(PINB, 2) | READ_PIN(PINA, 1) | READ_PIN(PINB, 5) | READ_PIN(PINA, 4)) != 0) {
+ 386:	36 b3       	in	r19, 0x16	; 22
+ 388:	89 b3       	in	r24, 0x19	; 25
+ 38a:	26 b3       	in	r18, 0x16	; 22
+ 38c:	99 b3       	in	r25, 0x19	; 25
+ 38e:	48 2f       	mov	r20, r24
+ 390:	42 70       	andi	r20, 0x02	; 2
+ 392:	83 2f       	mov	r24, r19
+ 394:	84 70       	andi	r24, 0x04	; 4
+ 396:	84 2b       	or	r24, r20
+ 398:	20 72       	andi	r18, 0x20	; 32
+ 39a:	82 2b       	or	r24, r18
+ 39c:	90 71       	andi	r25, 0x10	; 16
+ 39e:	89 2b       	or	r24, r25
+ 3a0:	a9 f4       	brne	.+42     	; 0x3cc <IC_74197+0x15a>
+		return 1;
+	}
+
+	twi_lcd_msg("IC 74197");
+ 3a2:	82 ef       	ldi	r24, 0xF2	; 242
+ 3a4:	90 e0       	ldi	r25, 0x00	; 0
+ 3a6:	2a df       	rcall	.-428    	; 0x1fc <twi_lcd_msg>
+	return 0;
+ 3a8:	80 e0       	ldi	r24, 0x00	; 0
+ 3aa:	90 e0       	ldi	r25, 0x00	; 0
+ 3ac:	1e c0       	rjmp	.+60     	; 0x3ea <IC_74197+0x178>
+
+	// Test PIN5 (PA4, PIN5) for two clock cycles
+	for (uint8_t i = 0; i < 2; i++) {
+		if (((PINA >> 4) & 1) != i) { // Check if bit 4 of PINA is equal to i
+			
+			return 1;
+ 3ae:	81 e0       	ldi	r24, 0x01	; 1
+ 3b0:	90 e0       	ldi	r25, 0x00	; 0
+ 3b2:	1b c0       	rjmp	.+54     	; 0x3ea <IC_74197+0x178>
+		 uint8_t bit2 = ((PINB >>2)&1);  // PINB[2]
+		 uint8_t bit1 = ((PINA>> 1)&1);  // PINA[1]
+		 uint8_t bit0 = ((PINB>> 5)&1);  // PINB[5]
+		 uint8_t value = (bit2 << 2) | (bit1 << 1) | bit0;
+		if (value != i) {
+			return 1;
+ 3b4:	81 e0       	ldi	r24, 0x01	; 1
+ 3b6:	90 e0       	ldi	r25, 0x00	; 0
+ 3b8:	18 c0       	rjmp	.+48     	; 0x3ea <IC_74197+0x178>
+ 3ba:	81 e0       	ldi	r24, 0x01	; 1
+ 3bc:	90 e0       	ldi	r25, 0x00	; 0
+ 3be:	15 c0       	rjmp	.+42     	; 0x3ea <IC_74197+0x178>
+		CLEAR_PIN(PORTA, 5); // Clock2 (PA5, PIN6) LOW
+	}
+
+	// Check all outputs are zero
+	if ((READ_PIN(PINB, 2) | READ_PIN(PINA, 1) | READ_PIN(PINB, 5) | READ_PIN(PINA, 4)) != 0) {
+		return 1;
+ 3c0:	81 e0       	ldi	r24, 0x01	; 1
+ 3c2:	90 e0       	ldi	r25, 0x00	; 0
+ 3c4:	12 c0       	rjmp	.+36     	; 0x3ea <IC_74197+0x178>
+		((PINB >> 5) & 0x01) << 1 | // Q1 -> PB5
+		((PINA >> 1) & 0x01) << 2 | // Q2 -> PA1
+		((PINB >> 2) & 0x01) << 3;  // Q3 -> PB2
+
+		if (value != d) { // Check if the read value matches the expected value
+			return 1;     // Error if mismatch
+ 3c6:	81 e0       	ldi	r24, 0x01	; 1
+ 3c8:	90 e0       	ldi	r25, 0x00	; 0
+ 3ca:	0f c0       	rjmp	.+30     	; 0x3ea <IC_74197+0x178>
+	CLEAR_PIN(PORTB, 1);  // Clear LOW
+	SET_PIN(PORTB, 1);    // Clear HIGH
+
+	// Verify final state
+	if ((READ_PIN(PINB, 2) | READ_PIN(PINA, 1) | READ_PIN(PINB, 5) | READ_PIN(PINA, 4)) != 0) {
+		return 1;
+ 3cc:	81 e0       	ldi	r24, 0x01	; 1
+ 3ce:	90 e0       	ldi	r25, 0x00	; 0
+ 3d0:	0c c0       	rjmp	.+24     	; 0x3ea <IC_74197+0x178>
+
+	// Test PIN5 (PA4, PIN5) for two clock cycles
+	for (uint8_t i = 0; i < 2; i++) {
+		if (((PINA >> 4) & 1) != i) { // Check if bit 4 of PINA is equal to i
+			
+			return 1;
+ 3d2:	81 e0       	ldi	r24, 0x01	; 1
+ 3d4:	90 e0       	ldi	r25, 0x00	; 0
+ 3d6:	09 c0       	rjmp	.+18     	; 0x3ea <IC_74197+0x178>
+		 uint8_t bit0 = ((PINB>> 5)&1);  // PINB[5]
+		 uint8_t value = (bit2 << 2) | (bit1 << 1) | bit0;
+		if (value != i) {
+			return 1;
+		}
+		SET_PIN(PORTA, 5);  // Clock2 (PA5, PIN6) HIGH
+ 3d8:	dd 9a       	sbi	0x1b, 5	; 27
+		CLEAR_PIN(PORTA, 5); // Clock2 (PA5, PIN6) LOW
+ 3da:	dd 98       	cbi	0x1b, 5	; 27
+	// Reset using Clear again
+	CLEAR_PIN(PORTB, 1);  // Clear LOW
+	SET_PIN(PORTB, 1);    // Clear HIGH
+
+	// Test outputs on PIN12, PIN2, PIN9 (PB2, PA1, PB5) for 8 clock cycles
+	for (uint8_t i = 0; i < 8; i++) {
+ 3dc:	31 e0       	ldi	r19, 0x01	; 1
+ 3de:	6b cf       	rjmp	.-298    	; 0x2b6 <IC_74197+0x44>
+	for (uint8_t i = 0; i < 2; i++) {
+		if (((PINA >> 4) & 1) != i) { // Check if bit 4 of PINA is equal to i
+			
+			return 1;
+		}
+		SET_PIN(PORTB, 6);  // Clock1 (PB6, PIN8) HIGH
+ 3e0:	c6 9a       	sbi	0x18, 6	; 24
+		CLEAR_PIN(PORTB, 6); // Clock1 (PB6, PIN8) LOW
+ 3e2:	c6 98       	cbi	0x18, 6	; 24
+	CLEAR_PIN(PORTB, 1);  // Clear LOW
+	SET_PIN(PORTB, 1);    // Clear HIGH
+
+	// Test PIN5 (PA4, PIN5) for two clock cycles
+	for (uint8_t i = 0; i < 2; i++) {
+		if (((PINA >> 4) & 1) != i) { // Check if bit 4 of PINA is equal to i
+ 3e4:	cc 99       	sbic	0x19, 4	; 25
+ 3e6:	56 cf       	rjmp	.-340    	; 0x294 <IC_74197+0x22>
+ 3e8:	f4 cf       	rjmp	.-24     	; 0x3d2 <IC_74197+0x160>
+		return 1;
+	}
+
+	twi_lcd_msg("IC 74197");
+	return 0;
+}
+ 3ea:	df 91       	pop	r29
+ 3ec:	cf 91       	pop	r28
+ 3ee:	1f 91       	pop	r17
+ 3f0:	0f 91       	pop	r16
+ 3f2:	08 95       	ret
+
+000003f4 <main>:
+
+int main(void){
+	twi_init();
+ 3f4:	65 de       	rcall	.-822    	; 0xc0 <twi_init>
+	twi_lcd_init();
+ 3f6:	13 df       	rcall	.-474    	; 0x21e <twi_lcd_init>
+	IC_74197();
+ 3f8:	3c df       	rcall	.-392    	; 0x272 <IC_74197>
+ 3fa:	80 e0       	ldi	r24, 0x00	; 0
+ 3fc:	90 e0       	ldi	r25, 0x00	; 0
+ 3fe:	08 95       	ret
+
+00000400 <_exit>:
+ 400:	f8 94       	cli
+
+00000402 <__stop_program>:
+ 402:	ff cf       	rjmp	.-2      	; 0x402 <__stop_program>
